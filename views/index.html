@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Listar Tarefas</title>
+</head>
+<body>
+    <header>
+        <h1>Listar Tarefas</h1>
+        <form action="/adicionar" method="GET">
+            <input type="text" name="tarefa" placeholder="Digite uma tarefa">
+            <button type="submit">Adicionar</button>
+        </form>
+    </header>
+    <div class="tarefas">
+        <% for(let i = 0; i < tarefas.length;i++ ){ %>
+            <p><%= tarefas[i] %></p><a class="removerBtn" href="/remover?index=<%= i %>">Remover</a>
+            <br>
+        <% } %>
+    </div>
+</body>
+</html>
